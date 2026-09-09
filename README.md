@@ -243,4 +243,4 @@ src/main/java/com/ecommerce/
 ```
 
 ---
-Built as **Project 1 of 3** from the resume's Project Experience section. Next up: **Supermarket Billing System**.
+
