@@ -90,8 +90,6 @@ public class SecurityConfig {
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .headers(headers -> headers
                 .frameOptions(frame -> frame.sameOrigin()) // allow H2 console & embedded invoice frames
-                .contentTypeOptions(content -> {})
-                .xssProtection(xss -> {})
             );
 
         return http.build();

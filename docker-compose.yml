@@ -42,7 +42,7 @@ services:
   # 3. React Vite Frontend with NGINX Reverse Proxy
   frontend:
     build:
-      context: ./Shopora_Frontend
+      context: ./BuySmart_Frontend
       dockerfile: Dockerfile
       args:
         VITE_API_BASE_URL: /api

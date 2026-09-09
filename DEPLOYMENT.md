@@ -79,7 +79,7 @@ docker compose up -d --build
 1. Go to [Vercel.com](https://vercel.com) &rarr; **Add New Project**.
 2. Select your repository.
 3. Configure project settings:
-   - **Root Directory**: Click "Edit" and choose `Shopora_Frontend`
+   - **Root Directory**: Click "Edit" and choose `BuySmart_Frontend`
    - **Framework Preset**: `Vite`
    - **Build Command**: `npm run build`
    - **Output Directory**: `dist`
@@ -95,7 +95,7 @@ You can serve both the React build and Spring Boot REST API from a single standa
 
 ### Step 1: Build the Frontend
 ```powershell
-cd Shopora_Frontend
+cd BuySmart_Frontend
 npm.cmd run build
 ```
 

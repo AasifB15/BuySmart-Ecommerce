@@ -852,45 +852,42 @@ public class DataSeeder implements CommandLineRunner {
             return;
         }
 
-        User customer = userRepository.findByEmail("customer@ecommerce.com").orElse(null);
-        if (customer == null) {
-            return;
-        }
+        userRepository.findByEmail("customer@ecommerce.com").ifPresent(customer -> {
+            List<Product> products = productRepository.findAll();
+            if (products.isEmpty()) {
+                return;
+            }
 
-        List<Product> products = productRepository.findAll();
-        if (products.isEmpty()) {
-            return;
-        }
+            // Seed reviews for the first 5 products
+            for (int i = 0; i < Math.min(5, products.size()); i++) {
+                Product p = products.get(i);
 
-        // Seed reviews for the first 3 products
-        for (int i = 0; i < Math.min(5, products.size()); i++) {
-            Product p = products.get(i);
+                Review r1 = Review.builder()
+                        .rating(5)
+                        .title("Exceptional quality and fast delivery!")
+                        .comment("Received in pristine condition. Exactly as described, and the build quality exceeded my expectations. Will definitely buy again from BuySmart!")
+                        .verifiedPurchase(true)
+                        .product(p)
+                        .user(customer)
+                        .build();
 
-            Review r1 = Review.builder()
-                    .rating(5)
-                    .title("Exceptional quality and fast delivery!")
-                    .comment("Received in pristine condition. Exactly as described, and the build quality exceeded my expectations. Will definitely buy again from BuySmart!")
-                    .verifiedPurchase(true)
-                    .product(p)
-                    .user(customer)
-                    .build();
+                Review r2 = Review.builder()
+                        .rating(4)
+                        .title("Great value for money")
+                        .comment("Works flawlessly out of the box. Highly recommended for daily use. Prompt packaging and tracking updates.")
+                        .verifiedPurchase(true)
+                        .product(p)
+                        .user(customer)
+                        .build();
 
-            Review r2 = Review.builder()
-                    .rating(4)
-                    .title("Great value for money")
-                    .comment("Works flawlessly out of the box. Highly recommended for daily use. Prompt packaging and tracking updates.")
-                    .verifiedPurchase(true)
-                    .product(p)
-                    .user(customer)
-                    .build();
+                reviewRepository.saveAll(List.of(r1, r2));
 
-            reviewRepository.saveAll(List.of(r1, r2));
+                p.setAverageRating(4.5);
+                p.setReviewCount(2);
+                productRepository.save(p);
+            }
 
-            p.setAverageRating(4.5);
-            p.setReviewCount(2);
-            productRepository.save(p);
-        }
-
-        log.info("Seeded verified sample customer reviews and ratings.");
+            log.info("Seeded verified sample customer reviews and ratings.");
+        });
     }
 }

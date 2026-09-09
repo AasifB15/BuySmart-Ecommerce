@@ -14,6 +14,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -53,7 +55,8 @@ public class FileUploadController {
             throw new BadRequestException("File size exceeds 5MB limit");
         }
 
-        String originalFilename = StringUtils.cleanPath(file.getOriginalFilename() != null ? file.getOriginalFilename() : "image.jpg");
+        String rawFilename = file.getOriginalFilename();
+        String originalFilename = StringUtils.cleanPath(rawFilename != null ? rawFilename : "image.jpg");
         String extension = "";
         int dotIndex = originalFilename.lastIndexOf('.');
         if (dotIndex > 0 && dotIndex < originalFilename.length() - 1) {
@@ -74,7 +77,7 @@ public class FileUploadController {
             throw new BadRequestException("Failed to upload image file");
         }
 
-        String baseUrl = org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+        String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
         String fileUrl = baseUrl + "/uploads/" + storedFilename;
         return ResponseEntity.ok(ApiResponse.success("Image uploaded successfully", Map.of(
                 "url", fileUrl,
@@ -97,15 +100,19 @@ public class FileUploadController {
             String contentType = null;
             try {
                 contentType = Files.probeContentType(filePath);
-            } catch (IOException ignored) {}
+            } catch (IOException e) {
+                log.debug("Could not probe content type for {}", filename, e);
+            }
 
             if (contentType == null) {
                 contentType = "application/octet-stream";
             }
 
+            String resourceFilename = resource.getFilename() != null ? resource.getFilename() : filename;
+
             return ResponseEntity.ok()
                     .contentType(MediaType.parseMediaType(contentType))
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resource.getFilename() + "\"")
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resourceFilename + "\"")
                     .body(resource);
         } catch (MalformedURLException e) {
             return ResponseEntity.badRequest().build();

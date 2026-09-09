@@ -86,7 +86,7 @@ import "./App.css";
    PAGE WRAPPER & SUBPAGE NAVIGATION
    ========================================================= */
 
-function ShoporaPage({ children, breadcrumbTitle }) {
+function BuySmartPage({ children, breadcrumbTitle }) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -206,7 +206,7 @@ const HERO_SLIDES = [
   },
 ];
 
-function ShoporaHomePage() {
+function BuySmartHomePage() {
   const navigate = useNavigate();
   const {
     currentUser,
@@ -1212,25 +1212,25 @@ function App() {
         {/* HOME */}
         <Route
             path="/"
-            element={<ShoporaHomePage />}
+            element={<BuySmartHomePage />}
         />
 
         {/* AUTHENTICATION */}
         <Route
             path="/login"
             element={
-              <ShoporaPage>
+              <BuySmartPage>
                 <CustomerLoginPage />
-              </ShoporaPage>
+              </BuySmartPage>
             }
         />
 
         <Route
             path="/register"
             element={
-              <ShoporaPage>
+              <BuySmartPage>
                 <CustomerRegistrationPage />
-              </ShoporaPage>
+              </BuySmartPage>
             }
         />
 
@@ -1238,18 +1238,18 @@ function App() {
         <Route
             path="/products"
             element={
-              <ShoporaPage>
+              <BuySmartPage>
                 <CustomerProductsPage />
-              </ShoporaPage>
+              </BuySmartPage>
             }
         />
 
         <Route
             path="/products/:productId"
             element={
-              <ShoporaPage>
+              <BuySmartPage>
                 <CustomerProductDetailsPage />
-              </ShoporaPage>
+              </BuySmartPage>
             }
         />
 
@@ -1258,9 +1258,9 @@ function App() {
             path="/cart"
             element={
               <CustomerRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <CustomerCartPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </CustomerRoute>
             }
         />
@@ -1269,9 +1269,9 @@ function App() {
             path="/checkout"
             element={
               <CustomerRoute requireAuth={true}>
-                <ShoporaPage>
+                <BuySmartPage>
                   <CustomerCheckoutPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </CustomerRoute>
             }
         />
@@ -1280,9 +1280,9 @@ function App() {
             path="/orders"
             element={
               <CustomerRoute requireAuth={true}>
-                <ShoporaPage>
+                <BuySmartPage>
                   <CustomerOrdersPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </CustomerRoute>
             }
         />
@@ -1291,9 +1291,9 @@ function App() {
             path="/wishlist"
             element={
               <CustomerRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <CustomerWishlistPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </CustomerRoute>
             }
         />
@@ -1303,9 +1303,9 @@ function App() {
             path="/account"
             element={
               <AuthenticatedRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <CustomerAccountPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </AuthenticatedRoute>
             }
         />
@@ -1315,9 +1315,9 @@ function App() {
             path="/seller"
             element={
               <SellerRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <SellerDashboardPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </SellerRoute>
             }
         />
@@ -1326,9 +1326,9 @@ function App() {
             path="/seller/products/new"
             element={
               <SellerRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <SellerProductFormPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </SellerRoute>
             }
         />
@@ -1337,9 +1337,9 @@ function App() {
             path="/seller/products/edit/:productId"
             element={
               <SellerRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <SellerProductEditPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </SellerRoute>
             }
         />
@@ -1349,9 +1349,9 @@ function App() {
             path="/admin"
             element={
               <AdminRoute>
-                <ShoporaPage>
+                <BuySmartPage>
                   <AdminDashboardPage />
-                </ShoporaPage>
+                </BuySmartPage>
               </AdminRoute>
             }
         />
@@ -1364,7 +1364,7 @@ function App() {
         <Route
             path="*"
             element={
-              <ShoporaPage>
+              <BuySmartPage>
                 <div style={{
                     minHeight: "60vh",
                     display: "flex",
@@ -1409,7 +1409,7 @@ function App() {
                     <span>Return to BuySmart Home</span>
                   </Link>
                 </div>
-              </ShoporaPage>
+              </BuySmartPage>
             }
         />
       </Routes>

@@ -1,8 +1,6 @@
-# E-Commerce Management System
+# BuySmart E-Commerce Platform
 
-A production-style, layered **Java Full Stack** backend built with **Spring Boot, Spring Security (JWT), Spring Data JPA (Hibernate), and MySQL** — matching the project described on the resume:
-
-> *Developed an e-commerce application using Java and Spring Boot with layered architecture. Designed Admin, Seller, and Customer modules with RESTful APIs. Implemented authentication and role-based authorization using Spring Security. Developed Controller, DTO, Service, Repository, and Entity layers with MySQL integration. Implemented validation, exception handling, CRUD operations, and DTO mapping.*
+A production-grade, enterprise full-stack e-commerce system built with **Spring Boot 3.3 (Java 17), Spring Security (JWT), Spring Data JPA (Hibernate), MySQL 8, and React 19 / Vite (`BuySmart_Frontend`)**.
 
 ---
 
@@ -10,9 +8,9 @@ A production-style, layered **Java Full Stack** backend built with **Spring Boot
 
 | Layer            | Technology                                   |
 |-------------------|-----------------------------------------------|
-| Language           | Java 17                                       |
-| Framework          | Spring Boot 3.3.4                             |
-| Security           | Spring Security + JWT (jjwt 0.12.6)           |
+| Frontend          | React 19 + Vite + Lucide Icons (`BuySmart_Frontend`) |
+| Backend API       | Java 17, Spring Boot 3.3.4                    |
+| Security          | Spring Security + JWT (jjwt 0.12.6)           |
 | Persistence        | Spring Data JPA / Hibernate                   |
 | Database           | MySQL 8 (H2 in-memory available for dev/demo) |
 | Build Tool         | Maven                                         |
@@ -72,7 +70,7 @@ The app starts on `http://localhost:8080` with an in-memory database, a seeded a
 3. Build and run:
    ```bash
    mvn clean package -DskipTests
-   java -jar target/ecommerce-management-system.jar
+   java -jar target/ecommerce-management-system-1.0.0.jar
    ```
 
 ### Default seeded admin account

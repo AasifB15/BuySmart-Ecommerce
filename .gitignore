@@ -1,20 +1,35 @@
+# Maven & Java Build Outputs
 target/
 *.class
+*.jar
+*.war
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
 *.log
+logs/
+
+# Frontend Build Outputs & Dependencies
+node_modules/
+BuySmart_Frontend/node_modules/
+BuySmart_Frontend/dist/
+dist/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor Configurations
 .idea/
 *.iml
 .vscode/
 .settings/
 .classpath
 .project
-.DS_Store
-HELP.md
-*.jar
-!.mvn/wrapper/maven-wrapper.jar
-node_modules/
-Shopora_Frontend/node_modules/
-Shopora_Frontend/dist/
-.env
-.env.local
-*.log
 
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+HELP.md
