@@ -1,0 +1,1398 @@
+.customer-orders-page {
+    min-height: 100vh;
+    background: #f6f8fb;
+    color: #14213d;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.customer-orders-navigation {
+    background: white;
+    border-bottom: 1px solid #e5e9f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.customer-orders-navigation-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    min-height: 76px;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.customer-orders-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #14213d;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    flex-shrink: 0;
+}
+
+.customer-orders-brand-symbol {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #14213d;
+    color: white;
+
+    border-radius: 11px;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.customer-orders-navigation-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 22px;
+
+    white-space: nowrap;
+}
+
+.customer-orders-navigation-links a,
+.customer-orders-current-link {
+    color: #596579;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.customer-orders-navigation-links a:hover {
+    color: #14213d;
+}
+
+.customer-orders-current-link {
+    color: #14213d;
+}
+
+
+/* =========================================================
+   CLICKABLE CUSTOMER PROFILE
+   ========================================================= */
+
+.customer-orders-profile-link {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 70px;
+    min-height: 44px;
+
+    margin: 0;
+    padding: 4px 7px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.customer-orders-profile-link:hover {
+    background: #f5f7fa;
+}
+
+.customer-orders-profile-link:active {
+    transform: scale(0.97);
+}
+
+.customer-orders-profile-link:focus {
+    outline: none;
+}
+
+.customer-orders-profile-link:focus-visible {
+    outline: 2px solid #14213d;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CUSTOMER PROFILE
+   ========================================================= */
+
+.customer-orders-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    pointer-events: none;
+}
+
+.customer-orders-profile-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #14213d;
+    color: white;
+
+    flex-shrink: 0;
+}
+
+.customer-orders-profile-information {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    text-align: left;
+}
+
+.customer-orders-profile-information span {
+    color: #667085;
+
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.customer-orders-profile-information strong {
+    max-width: 130px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #14213d;
+
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+   ========================================================= */
+
+.customer-orders-logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #475467;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease;
+}
+
+.customer-orders-logout-button:hover {
+    background: #f8fafc;
+    border-color: #98a2b3;
+    color: #14213d;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.customer-orders-content {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 38px 24px 80px;
+}
+
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.customer-orders-back-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #596579;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    margin-bottom: 30px;
+}
+
+.customer-orders-back-link:hover {
+    color: #14213d;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.customer-orders-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.customer-orders-heading p {
+    margin: 0 0 8px;
+
+    color: #65718a;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.customer-orders-heading h1 {
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.customer-orders-heading span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #6b7588;
+
+    font-size: 15px;
+}
+
+.customer-orders-total {
+    min-width: 130px;
+
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+    border-radius: 12px;
+}
+
+.customer-orders-total svg {
+    color: #14213d;
+}
+
+.customer-orders-total strong {
+    font-size: 19px;
+}
+
+.customer-orders-total span {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.customer-orders-loading {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #667085;
+}
+
+.customer-orders-loading-spinner {
+    width: 40px;
+    height: 40px;
+
+    border: 4px solid #e1e6ee;
+    border-top-color: #14213d;
+
+    border-radius: 50%;
+
+    animation: customerOrdersSpin 0.8s linear infinite;
+
+    margin-bottom: 15px;
+}
+
+@keyframes customerOrdersSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.customer-orders-error {
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background: #fff4f4;
+
+    border: 1px solid #ffd2d2;
+    border-radius: 11px;
+
+    color: #a12727;
+
+    margin-bottom: 25px;
+}
+
+.customer-orders-error span {
+    flex: 1;
+}
+
+.customer-orders-error button {
+    border: none;
+
+    background: transparent;
+
+    color: #a12727;
+
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.customer-orders-empty,
+.customer-orders-login-required {
+    background: white;
+
+    border: 1px solid #e4e8ef;
+    border-radius: 18px;
+
+    padding: 70px 25px;
+
+    text-align: center;
+}
+
+.customer-orders-empty-icon,
+.customer-orders-login-icon {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef2f8;
+
+    color: #14213d;
+
+    border-radius: 50%;
+}
+
+.customer-orders-empty h2,
+.customer-orders-login-required h1 {
+    margin: 0 0 10px;
+
+    font-size: 24px;
+}
+
+.customer-orders-empty p,
+.customer-orders-login-required p {
+    max-width: 520px;
+
+    margin: 0 auto 25px;
+
+    color: #6b7588;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.customer-orders-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 22px;
+
+    background: #14213d;
+
+    color: white;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.customer-orders-primary-button:hover {
+    background: #0d1930;
+}
+
+
+/* =========================================================
+   ORDER LIST
+   ========================================================= */
+
+.customer-orders-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.customer-order-card {
+    background: white;
+
+    border: 1px solid #e3e7ee;
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ORDER HEADER
+   ========================================================= */
+
+.customer-order-header {
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.customer-order-header-main {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.customer-order-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef2f8;
+
+    color: #14213d;
+
+    border-radius: 10px;
+}
+
+.customer-order-header-main div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.customer-order-header-main span {
+    color: #788398;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.customer-order-header-main strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.customer-orders-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.customer-orders-status-placed {
+    background: #fff5dc;
+    color: #966600;
+}
+
+.customer-orders-status-confirmed {
+    background: #eaf2ff;
+    color: #285da8;
+}
+
+.customer-orders-status-shipped {
+    background: #eeeaff;
+    color: #5944a5;
+}
+
+.customer-orders-status-delivered {
+    background: #e8f8ef;
+    color: #168047;
+}
+
+.customer-orders-status-cancelled {
+    background: #fff0f0;
+    color: #b72d2d;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.customer-order-summary {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 19px 22px;
+
+    gap: 20px;
+}
+
+.customer-order-summary > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.customer-order-summary span {
+    color: #7b8597;
+
+    font-size: 12px;
+}
+
+.customer-order-summary strong {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #27344d;
+
+    font-size: 14px;
+}
+
+.customer-order-total-price {
+    font-size: 17px !important;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.customer-order-actions {
+    padding: 0 22px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+.customer-order-details-button,
+.customer-order-cancel-button {
+    min-height: 39px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.customer-order-details-button {
+    background: #14213d;
+
+    color: white;
+
+    border: 1px solid #14213d;
+}
+
+.customer-order-details-button:hover {
+    background: #0d1930;
+}
+
+.customer-order-cancel-button {
+    background: white;
+
+    color: #b72d2d;
+
+    border: 1px solid #efcaca;
+}
+
+.customer-order-cancel-button:hover {
+    background: #fff5f5;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.customer-order-details {
+    padding: 0 22px 25px;
+}
+
+.customer-order-details-divider {
+    height: 1px;
+
+    background: #edf0f4;
+
+    margin-bottom: 24px;
+}
+
+.customer-order-details-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 28px;
+}
+
+.customer-order-detail-section {
+    padding: 18px;
+
+    background: #f8f9fb;
+
+    border: 1px solid #e8ebf0;
+
+    border-radius: 11px;
+}
+
+.customer-order-detail-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+
+    color: #14213d;
+}
+
+.customer-order-detail-heading h3 {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+.customer-order-detail-section p {
+    margin: 0;
+
+    color: #606c80;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ORDERED PRODUCTS
+   ========================================================= */
+
+.customer-order-products {
+    border-top: 1px solid #edf0f4;
+
+    padding-top: 23px;
+}
+
+.customer-order-product {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.customer-order-product-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f3f7;
+
+    color: #4d5b72;
+
+    border-radius: 9px;
+}
+
+.customer-order-product-information {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.customer-order-product-information strong {
+    font-size: 14px;
+}
+
+.customer-order-product-information span {
+    color: #7b8597;
+
+    font-size: 12px;
+}
+
+.customer-order-product-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+.customer-order-product-price span {
+    color: #7b8597;
+
+    font-size: 12px;
+}
+
+.customer-order-product-price strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CANCELLED INFORMATION
+   ========================================================= */
+
+.customer-order-cancelled-information {
+    margin-top: 20px;
+
+    padding: 17px;
+
+    background: #fff6f6;
+
+    border: 1px solid #f1d4d4;
+
+    border-radius: 10px;
+}
+
+.customer-order-cancelled-information > div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #b72d2d;
+}
+
+.customer-order-cancelled-information p {
+    margin: 9px 0 5px;
+
+    color: #6f5555;
+
+    font-size: 13px;
+}
+
+.customer-order-cancelled-information span {
+    color: #8a6e6e;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CANCELLATION MODAL
+   ========================================================= */
+
+.customer-order-cancellation-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(12, 20, 36, 0.55);
+}
+
+.customer-order-cancellation-modal {
+    width: 100%;
+
+    max-width: 530px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.22);
+}
+
+.customer-order-cancellation-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.customer-order-cancellation-header > div {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.customer-order-cancellation-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f0;
+
+    color: #b72d2d;
+
+    border-radius: 10px;
+}
+
+.customer-order-cancellation-header p {
+    margin: 0 0 4px;
+
+    color: #8a94a6;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.customer-order-cancellation-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+.customer-order-cancellation-header button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: #f2f4f7;
+
+    color: #536076;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.customer-order-cancellation-warning {
+    padding: 14px 16px;
+
+    background: #fff9ed;
+
+    border: 1px solid #f3e2b9;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+}
+
+.customer-order-cancellation-warning strong {
+    display: block;
+
+    color: #765500;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.customer-order-cancellation-warning p {
+    margin: 0;
+
+    color: #826f48;
+
+    font-size: 12px;
+}
+
+.customer-order-cancellation-modal form > label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #28354d;
+
+    font-size: 13px;
+
+    font-weight: 750;
+}
+
+.customer-order-cancellation-modal textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 9px;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.customer-order-cancellation-modal textarea:focus {
+    border-color: #14213d;
+
+    box-shadow:
+            0 0 0 3px rgba(20, 33, 61, 0.08);
+}
+
+.customer-order-cancellation-character-count {
+    margin-top: 5px;
+
+    text-align: right;
+
+    color: #8992a2;
+
+    font-size: 11px;
+}
+
+.customer-order-cancellation-error {
+    margin-top: 12px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    background: #fff1f1;
+
+    color: #a12727;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+}
+
+.customer-order-cancellation-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.customer-order-cancellation-actions button {
+    min-height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+.customer-order-cancellation-keep-button {
+    background: white;
+
+    border: 1px solid #d8dde6;
+
+    color: #4e5b70;
+}
+
+.customer-order-cancellation-confirm-button {
+    background: #b72d2d;
+
+    border: 1px solid #b72d2d;
+
+    color: white;
+}
+
+.customer-order-cancellation-confirm-button:disabled,
+.customer-order-cancellation-keep-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .customer-orders-navigation-container {
+        gap: 15px;
+    }
+
+    .customer-orders-navigation-links {
+        gap: 12px;
+    }
+
+    .customer-orders-navigation-links a,
+    .customer-orders-current-link {
+        font-size: 13px;
+    }
+
+    .customer-orders-profile-information {
+        display: none;
+    }
+
+    .customer-orders-profile-link {
+        min-width: 44px;
+        width: 44px;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .customer-orders-navigation-container {
+        min-height: 68px;
+
+        padding: 0 16px;
+    }
+
+    .customer-orders-brand {
+        font-size: 21px;
+    }
+
+    .customer-orders-brand-symbol {
+        width: 36px;
+        height: 36px;
+
+        font-size: 19px;
+    }
+
+    .customer-orders-navigation-links {
+        gap: 10px;
+    }
+
+    .customer-orders-navigation-links a,
+    .customer-orders-current-link {
+        font-size: 12px;
+    }
+
+    .customer-orders-content {
+        padding: 28px 16px 60px;
+    }
+
+    .customer-orders-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .customer-orders-heading h1 {
+        font-size: 31px;
+    }
+
+    .customer-orders-total {
+        align-self: flex-start;
+    }
+
+    .customer-order-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .customer-order-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-order-actions {
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .customer-order-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-order-product {
+        align-items: flex-start;
+    }
+
+    .customer-order-product-price {
+        text-align: right;
+    }
+
+    .customer-order-cancellation-modal {
+        padding: 20px;
+    }
+
+    .customer-order-cancellation-actions {
+        flex-direction: column-reverse;
+    }
+
+    .customer-order-cancellation-actions button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .customer-orders-navigation-container {
+        flex-wrap: wrap;
+
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .customer-orders-navigation-links {
+        width: 100%;
+
+        justify-content: space-between;
+
+        overflow-x: auto;
+
+        padding-bottom: 2px;
+    }
+
+    .customer-orders-profile-link {
+        flex-shrink: 0;
+    }
+
+    .customer-orders-logout-button span {
+        display: none;
+    }
+
+    .customer-orders-logout-button {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+
+        flex-shrink: 0;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .customer-orders-navigation-links {
+        gap: 8px;
+    }
+
+    .customer-orders-navigation-links a,
+    .customer-orders-current-link {
+        font-size: 11px;
+    }
+
+    .customer-orders-profile-link {
+        width: 36px;
+        min-width: 36px;
+        min-height: 38px;
+
+        padding: 2px;
+    }
+
+    .customer-orders-profile-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+}
+
+.customer-order-invoice-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.customer-order-invoice-btn:hover {
+    background: #4f46e5;
+    color: #ffffff;
+    border-color: #4f46e5;
+}
+
+.customer-order-pay-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+    transition: all 0.2s ease;
+}
+
+.customer-order-pay-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+    transform: translateY(-1px);
+}
+

@@ -1,0 +1,1009 @@
+.customer-account-page {
+    min-height: 100vh;
+    background: #f6f8fb;
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.customer-account-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.customer-account-header-content {
+    width: min(1200px, 94%);
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.customer-account-brand {
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.customer-account-navigation {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.customer-account-navigation-link,
+.customer-account-logout-button {
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.customer-account-navigation-link {
+    color: #4b5563;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-navigation-link:hover {
+    color: #111827;
+
+    background: #f3f4f6;
+}
+
+
+.customer-account-logout-button {
+    border: 1px solid #e5e7eb;
+
+    background: #ffffff;
+
+    color: #4b5563;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-logout-button:hover {
+    background: #f9fafb;
+
+    color: #111827;
+
+    border-color: #d1d5db;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.customer-account-main {
+    padding: 35px 20px 70px;
+}
+
+
+.customer-account-container {
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+}
+
+
+.customer-account-back-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 28px;
+
+    color: #6b7280;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.customer-account-back-link:hover {
+    color: #111827;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.customer-account-introduction {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+.customer-account-introduction-icon {
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+.customer-account-eyebrow {
+    margin: 0 0 5px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.customer-account-introduction h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.customer-account-introduction p:last-child {
+    margin: 7px 0 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ACCOUNT LAYOUT
+   ========================================================= */
+
+.customer-account-layout {
+    display: grid;
+
+    grid-template-columns: 275px minmax(0, 1fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.customer-account-sidebar {
+    position: sticky;
+    top: 100px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+}
+
+
+.customer-account-user-summary {
+    padding: 27px 22px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eef0f3;
+}
+
+
+.customer-account-avatar {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+.customer-account-user-summary h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 17px;
+}
+
+
+.customer-account-user-summary p {
+    margin: 6px 0 0;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.customer-account-sidebar-links {
+    padding: 10px;
+}
+
+
+.customer-account-sidebar-link {
+    min-height: 46px;
+
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 9px;
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-sidebar-link:hover {
+    background: #f3f4f6;
+
+    color: #111827;
+}
+
+
+.customer-account-sidebar-link.active {
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.customer-account-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+.customer-account-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.customer-account-card-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-bottom: 26px;
+}
+
+
+.customer-account-card-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f3f4f6;
+
+    color: #111827;
+}
+
+
+.customer-account-card-heading h2 {
+    margin: 2px 0 4px;
+
+    color: #111827;
+
+    font-size: 20px;
+}
+
+
+.customer-account-card-heading p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.customer-account-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+.customer-account-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.customer-account-form-group label {
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.customer-account-input-wrapper {
+    height: 48px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-input-wrapper:focus-within {
+    border-color: #111827;
+
+    box-shadow:
+            0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+
+.customer-account-input-wrapper svg {
+    flex-shrink: 0;
+
+    color: #9ca3af;
+}
+
+
+.customer-account-input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+.customer-account-form-group > input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-form-group > input:focus {
+    border-color: #111827;
+
+    box-shadow:
+            0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+.customer-account-phone-prefix {
+    font-weight: 700;
+    font-size: 13px;
+    color: #4f46e5;
+    background: #e0e7ff;
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.03em;
+    user-select: none;
+}
+
+[data-theme="dark"] .customer-account-phone-prefix {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+}
+
+.customer-account-field-hint {
+    display: block;
+    font-size: 11.5px;
+    color: #6b7280;
+    margin-top: 4px;
+    line-height: 1.35;
+}
+
+[data-theme="dark"] .customer-account-field-hint {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   READ ONLY EMAIL
+   ========================================================= */
+
+.customer-account-readonly-input {
+    background: #f9fafb;
+}
+
+
+.customer-account-readonly-input input {
+    color: #6b7280;
+
+    cursor: not-allowed;
+}
+
+
+.customer-account-form-group small {
+    margin-top: -2px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.customer-account-primary-button {
+    width: fit-content;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.customer-account-primary-button:hover {
+    background: #000000;
+
+    transform: translateY(-1px);
+}
+
+
+.customer-account-primary-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.customer-account-message {
+    padding: 11px 13px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.customer-account-message.error {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+}
+
+
+.customer-account-message.success {
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    color: #15803d;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.customer-account-loading {
+    padding: 30px 0;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .customer-account-header-content {
+        flex-direction: column;
+
+        padding: 14px 0;
+    }
+
+
+    .customer-account-navigation {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .customer-account-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .customer-account-sidebar {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .customer-account-main {
+        padding: 25px 14px 50px;
+    }
+
+
+    .customer-account-introduction {
+        align-items: flex-start;
+    }
+
+
+    .customer-account-introduction-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .customer-account-introduction h1 {
+        font-size: 26px;
+    }
+
+
+    .customer-account-card {
+        padding: 21px 17px;
+    }
+
+
+    .customer-account-navigation-link,
+    .customer-account-logout-button {
+        padding: 0 9px;
+
+        font-size: 12px;
+    }
+
+
+    .customer-account-primary-button {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   AMAZON-STYLE 6-CARD ACCOUNT HUB & TABS
+   ========================================================= */
+
+.buysmart-account-hub-section {
+    margin-bottom: 2rem;
+}
+
+.buysmart-account-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.buysmart-hub-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buysmart-hub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.buysmart-hub-card.hub-card-active {
+    border-color: #4f46e5;
+    background: rgba(79, 70, 229, 0.02);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.buysmart-hub-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.buysmart-hub-icon-box.orders-box {
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+}
+
+.buysmart-hub-icon-box.security-box {
+    background: rgba(79, 70, 229, 0.12);
+    color: #4f46e5;
+}
+
+.buysmart-hub-icon-box.address-box {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+}
+
+.buysmart-hub-icon-box.payments-box {
+    background: rgba(2, 132, 199, 0.12);
+    color: #0284c7;
+}
+
+.buysmart-hub-icon-box.wishlist-box {
+    background: rgba(225, 29, 72, 0.12);
+    color: #e11d48;
+}
+
+.buysmart-hub-icon-box.support-box {
+    background: rgba(139, 92, 246, 0.12);
+    color: #8b5cf6;
+}
+
+.buysmart-hub-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+}
+
+.buysmart-hub-info p {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* SIDEBAR BUTTONS */
+.customer-account-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.customer-account-sidebar-link:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.customer-account-sidebar-link.active {
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+}
+
+/* ADDRESSES TAB */
+.buysmart-account-addresses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buysmart-account-address-card {
+    padding: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.buysmart-account-address-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.buysmart-account-address-card p {
+    margin: 0.2rem 0;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.buysmart-delete-address-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    padding: 0;
+}
+
+.buysmart-delete-address-btn:hover {
+    text-decoration: underline;
+}
+
+/* PAYMENT BOX */
+.buysmart-payment-info-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.buysmart-payment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.buysmart-payment-info-box p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+}
+
+.buysmart-vpa-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.buysmart-vpa-badge code {
+    background: #e2e8f0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 700;
+    color: #1e1b4b;
+}
+
+/* SUPPORT TAB */
+.buysmart-support-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buysmart-support-item {
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.buysmart-support-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.buysmart-support-item p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin: 0;
+}
+
+.buysmart-support-contact {
+    padding: 1rem;
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #1e1b4b;
+}
+
+@media (max-width: 992px) {
+    .buysmart-account-hub-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .buysmart-account-hub-grid {
+        grid-template-columns: 1fr;
+    }
+}

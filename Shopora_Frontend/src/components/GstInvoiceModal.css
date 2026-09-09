@@ -1,0 +1,401 @@
+/* =========================================================
+   BUYSMART GST INVOICE MODAL & PRINT STYLES
+   ========================================================= */
+
+.gst-invoice-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.gst-invoice-dialog {
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 16px;
+    max-width: 860px;
+    width: 100%;
+    max-height: 94vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+/* TOP BAR */
+.gst-invoice-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    background: #1e1b4b;
+    color: #e0e7ff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.gst-invoice-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #a5b4fc;
+}
+
+.gst-invoice-badge svg {
+    color: #34d399;
+}
+
+.gst-invoice-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.gst-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.gst-action-btn.download-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+}
+
+.gst-action-btn.download-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.gst-action-btn.print-btn {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.gst-action-btn.print-btn:hover {
+    background: #4338ca;
+}
+
+.gst-action-btn.whatsapp-btn {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.gst-action-btn.whatsapp-btn:hover {
+    background: #15803d;
+}
+
+.gst-action-btn.email-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.gst-action-btn.email-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.gst-close-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0.35rem;
+    border-radius: 6px;
+}
+
+.gst-close-btn:hover {
+    color: #ffffff;
+}
+
+/* PAPER */
+.gst-invoice-paper {
+    padding: 2.25rem 2.5rem;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    line-height: 1.45;
+}
+
+/* HEADER */
+.gst-header-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.gst-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.gst-logo-badge {
+    width: 36px;
+    height: 36px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gst-logo-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    line-height: 1.1;
+}
+
+.gst-logo small {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.gst-company-details {
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.gst-company-details p {
+    margin: 0.15rem 0;
+}
+
+.gst-meta-info {
+    text-align: right;
+}
+
+.gst-invoice-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.gst-meta-info table {
+    margin-left: auto;
+    font-size: 0.82rem;
+}
+
+.gst-meta-info td {
+    padding: 0.2rem 0.4rem;
+}
+
+.gst-meta-info td:first-child {
+    color: #64748b;
+}
+
+.gst-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 1.25rem 0;
+}
+
+/* PARTIES */
+.gst-parties-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.gst-party-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4f46e5;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+.gst-party-content strong {
+    font-size: 0.92rem;
+    color: #0f172a;
+}
+
+.gst-party-content p {
+    margin: 0.2rem 0;
+    font-size: 0.82rem;
+    color: #475569;
+}
+
+/* ITEMS TABLE */
+.gst-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.75rem;
+    font-size: 0.84rem;
+}
+
+.gst-items-table th {
+    background: #1e1b4b;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    border: 1px solid #1e1b4b;
+}
+
+.gst-items-table th:last-child,
+.gst-items-table td:last-child,
+.gst-items-table td:nth-child(5) {
+    text-align: right;
+}
+
+.gst-items-table td {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.gst-item-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-top: 0.15rem;
+}
+
+/* SUMMARY */
+.gst-summary-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gst-summary-notes {
+    font-size: 0.76rem;
+    color: #64748b;
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.gst-summary-notes p {
+    margin: 0.35rem 0;
+}
+
+.gst-totals-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.gst-totals-table td {
+    padding: 0.4rem 0.5rem;
+}
+
+.gst-totals-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.gst-free {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.gst-grand-total-row {
+    border-top: 2px solid #1e1b4b;
+    border-bottom: 2px solid #1e1b4b;
+    font-size: 1.05rem;
+}
+
+.gst-grand-total-row td {
+    padding: 0.65rem 0.5rem;
+    color: #1e1b4b;
+}
+
+/* FOOTER */
+.gst-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #cbd5e1;
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+.gst-signatory-stamp {
+    display: inline-block;
+    border: 1px dashed #4f46e5;
+    color: #4f46e5;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    margin-top: 0.45rem;
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.gst-computer-generated {
+    font-size: 0.72rem;
+    font-style: italic;
+    color: #94a3b8;
+}
+
+/* PRINT STYLES */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .gst-invoice-dialog,
+    .gst-invoice-dialog * {
+        visibility: visible;
+    }
+
+    .gst-invoice-overlay {
+        position: static;
+        background: none;
+        padding: 0;
+    }
+
+    .gst-invoice-dialog {
+        box-shadow: none;
+        max-width: 100%;
+        max-height: none;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .gst-invoice-paper {
+        padding: 0;
+    }
+}

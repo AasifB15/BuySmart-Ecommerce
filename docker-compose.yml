@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # 1. MySQL 8 Database
+  mysql:
+    image: mysql:8.0
+    container_name: buysmart-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_DATABASE: ${DB_NAME:-shopora_db}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - buysmart-network
+
+  # 2. Spring Boot Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: buysmart-backend
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-shopora_db}
+      DB_USERNAME: ${DB_USERNAME:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      SPRING_PROFILES_ACTIVE: mysql
+      PORT: 8080
+      JWT_SECRET: ${JWT_SECRET:-MzY0RjQyM0Y0MjQ2MjhIMkI0RDYyNTFENjU5MDNCQjM3NDJEMzU2NTQyNjRFQjI3MDc4QTk2NDQ=}
+    ports:
+      - "8080:8080"
+    networks:
+      - buysmart-network
+
+  # 3. React Vite Frontend with NGINX Reverse Proxy
+  frontend:
+    build:
+      context: ./Shopora_Frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+    container_name: buysmart-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - buysmart-network
+
+volumes:
+  mysql_data:
+
+networks:
+  buysmart-network:
+    driver: bridge

@@ -1,0 +1,273 @@
+:root {
+    color-scheme: light;
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Global Design Tokens - Light */
+    --brand-primary: #e11d48;
+    --brand-primary-hover: #be123c;
+    --brand-primary-light: rgba(225, 29, 72, 0.08);
+    --brand-secondary: #2563eb;
+    --brand-secondary-hover: #1d4ed8;
+    --brand-accent: #f59e0b;
+    --brand-emerald: #10b981;
+
+    --bg-app: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-surface: #ffffff;
+    --bg-surface-soft: #f1f3f9;
+    --bg-subtle: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-hover: #e2e8f0;
+    --bg-input: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    --border-strong: #cbd5e1;
+
+    /* Legacy Shopora namespace tokens */
+    --shopora-background: #f8fafc;
+    --shopora-surface: #ffffff;
+    --shopora-surface-soft: #f1f3f9;
+    --shopora-text: #0f172a;
+    --shopora-text-secondary: #475569;
+    --shopora-text-muted: #64748b;
+    --shopora-border: #e2e8f0;
+    --shopora-border-strong: #cbd5e1;
+    --shopora-primary: #e11d48;
+    --shopora-primary-light: #f43f5e;
+    --shopora-primary-dark: #be123c;
+    --shopora-purple-soft: rgba(225, 29, 72, 0.08);
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Global Design Tokens - Dark */
+    --brand-primary: #f43f5e;
+    --brand-primary-hover: #fb7185;
+    --brand-primary-light: rgba(244, 63, 94, 0.15);
+    --brand-secondary: #3b82f6;
+    --brand-secondary-hover: #60a5fa;
+    --brand-accent: #fbbf24;
+    --brand-emerald: #34d399;
+
+    --bg-app: #090d16;
+    --bg-card: #111827;
+    --bg-surface: #0f172a;
+    --bg-surface-soft: #1e293b;
+    --bg-subtle: #0f172a;
+    --bg-tertiary: #1e293b;
+    --bg-hover: #26334d;
+    --bg-input: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.2);
+
+    /* Legacy Shopora namespace tokens */
+    --shopora-background: #090d16;
+    --shopora-surface: #111827;
+    --shopora-surface-soft: #1e293b;
+    --shopora-text: #f8fafc;
+    --shopora-text-secondary: #cbd5e1;
+    --shopora-text-muted: #94a3b8;
+    --shopora-border: rgba(255, 255, 255, 0.1);
+    --shopora-border-strong: rgba(255, 255, 255, 0.2);
+    --shopora-primary: #f43f5e;
+    --shopora-primary-light: #fb7185;
+    --shopora-primary-dark: #e11d48;
+    --shopora-purple-soft: rgba(244, 63, 94, 0.15);
+}
+
+:root[data-theme="light"],
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: var(--bg-app);
+    color: var(--text-primary);
+
+    transition:
+            background-color 0.25s ease,
+            color 0.25s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================================
+   BUYSMART UNIFIED LAYOUT OVERRIDES & DEDUPLICATION
+   ========================================================= */
+
+/* Prevent inner legacy navigation bars from rendering inside the main BuySmart shell */
+.buysmart-app-layout .customer-cart-navigation,
+.buysmart-app-layout .customer-checkout-navigation,
+.buysmart-app-layout .customer-orders-navigation,
+.buysmart-app-layout .customer-account-header,
+.buysmart-app-layout .seller-dashboard-header,
+.buysmart-app-layout .seller-navigation {
+    display: none !important;
+}
+
+/* High-contrast dark-mode overrides for headings & backgrounds */
+[data-theme="dark"] .customer-cart-page,
+[data-theme="dark"] .customer-checkout-page,
+[data-theme="dark"] .customer-orders-page,
+[data-theme="dark"] .customer-account-page,
+[data-theme="dark"] .seller-dashboard-page,
+[data-theme="dark"] .adminDashboard,
+[data-theme="dark"] .adminDashboardPage {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .customer-cart-heading h1,
+[data-theme="dark"] .customer-checkout-heading h1,
+[data-theme="dark"] .customer-orders-heading h1,
+[data-theme="dark"] .customer-orders-title h1,
+[data-theme="dark"] .customer-account-heading h1,
+[data-theme="dark"] .customer-account-header-info h1,
+[data-theme="dark"] .customer-account-header-info h2,
+[data-theme="dark"] .customer-account-details-heading h1,
+[data-theme="dark"] .customer-account-details-heading h2,
+[data-theme="dark"] .customer-cart-section-title,
+[data-theme="dark"] .customer-account-title,
+[data-theme="dark"] .customer-orders-title,
+[data-theme="dark"] .seller-dashboard-welcome h1,
+[data-theme="dark"] .seller-dashboard-introduction h1,
+[data-theme="dark"] .seller-dashboard-section-heading h2,
+[data-theme="dark"] .seller-products-section-header h2,
+[data-theme="dark"] .customer-account-introduction h1,
+[data-theme="dark"] .customer-cart-items-heading h2,
+[data-theme="dark"] .adminHeader h1,
+[data-theme="dark"] .adminSectionHeading h2 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .customer-cart-items-heading span,
+[data-theme="dark"] .customer-cart-heading p,
+[data-theme="dark"] .customer-checkout-heading p,
+[data-theme="dark"] .customer-orders-heading p,
+[data-theme="dark"] .customer-account-heading p,
+[data-theme="dark"] .seller-dashboard-introduction p,
+[data-theme="dark"] .adminSubtitle,
+[data-theme="dark"] .adminSectionHeading p,
+[data-theme="dark"] .customer-cart-back-link,
+[data-theme="dark"] .customer-checkout-back-link,
+[data-theme="dark"] .customer-orders-back-link,
+[data-theme="dark"] .customer-account-back-link {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .seller-dashboard-label,
+[data-theme="dark"] .adminEyebrow {
+    color: #38bdf8 !important;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .adminNav,
+[data-theme="dark"] .adminPipelineCard,
+[data-theme="dark"] .adminControlsCard,
+[data-theme="dark"] .adminTableCard,
+[data-theme="dark"] .adminFilterCard,
+[data-theme="dark"] .adminCard {
+    background: #131b2e !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .adminTable th {
+    background: #0f172a !important;
+    color: #94a3b8 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .adminTable td {
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .adminSearchInput,
+[data-theme="dark"] .adminSelect {
+    background: #0b1120 !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}

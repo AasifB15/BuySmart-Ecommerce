@@ -1,0 +1,897 @@
+/* =========================================================
+   SELLER DASHBOARD
+   ========================================================= */
+
+.seller-dashboard-page {
+    min-height: 100vh;
+
+    background: #f5f6f8;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   SELLER NAVIGATION
+   ========================================================= */
+
+.seller-navigation {
+    background: #ffffff;
+
+    border-bottom: 1px solid #e7e8eb;
+}
+
+.seller-navigation-container {
+    max-width: 1400px;
+
+    min-height: 72px;
+
+    margin: auto;
+
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* Shopora Brand */
+
+.seller-shopora-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #172033;
+
+    text-decoration: none;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.seller-shopora-symbol {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+/* Seller Shop Information */
+
+.seller-shop-information {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: auto;
+}
+
+.seller-shop-information > svg {
+    color: #555e6c;
+}
+
+.seller-shop-information div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.seller-shop-information strong {
+    color: #202838;
+
+    font-size: 13px;
+}
+
+.seller-shop-information span {
+    color: #858c98;
+
+    font-size: 11px;
+}
+
+
+/* Seller Navigation Actions */
+
+.seller-navigation-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.refresh-dashboard-button,
+.seller-logout-button {
+    border: 1px solid #dfe2e6;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #343b48;
+
+    cursor: pointer;
+}
+
+.refresh-dashboard-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-dashboard-button:hover,
+.seller-logout-button:hover {
+    border-color: #111827;
+
+    color: #111827;
+}
+
+.seller-logout-button {
+    height: 40px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DASHBOARD CONTENT
+   ========================================================= */
+
+.seller-dashboard-content {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 45px 40px 70px;
+}
+
+
+/* Introduction */
+
+.seller-dashboard-introduction {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.seller-dashboard-label {
+    margin-bottom: 7px;
+
+    color: #737b87;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.seller-dashboard-introduction h1 {
+    margin-bottom: 8px;
+
+    color: #111827;
+
+    font-size: 34px;
+}
+
+.seller-dashboard-introduction > div > p:last-child {
+    color: #747c88;
+
+    font-size: 14px;
+}
+
+
+/* Add Product Button */
+
+.add-product-button {
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.add-product-button:hover {
+    background: #252d3b;
+}
+
+.add-product-button.small {
+    min-height: 39px;
+
+    padding: 0 14px;
+
+    font-size: 12px;
+}
+
+
+/* Dashboard Error */
+
+.seller-dashboard-error {
+    margin-bottom: 25px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #edc5c5;
+
+    border-radius: 8px;
+
+    background: #fff4f4;
+
+    color: #a32929;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SUMMARY INFORMATION
+   ========================================================= */
+
+.seller-summary-information {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.seller-summary-card.profit-card {
+    border-left: 4px solid #10b981;
+}
+
+.seller-summary-card.revenue-card {
+    border-left: 4px solid #6366f1;
+}
+
+.seller-summary-card.warning-card {
+    border-left: 4px solid #f59e0b;
+}
+
+.seller-low-stock-alert {
+    margin-bottom: 25px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+}
+
+.seller-low-stock-alert .alert-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.seller-low-stock-alert .alert-icon {
+    color: #f59e0b;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.seller-low-stock-alert strong {
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.seller-low-stock-alert p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #b45309;
+}
+
+
+.seller-summary-card {
+    min-height: 115px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    border: 1px solid #e7e8eb;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+}
+
+.seller-summary-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f0f1f3;
+
+    color: #111827;
+}
+
+.seller-summary-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.seller-summary-card span {
+    color: #7b838f;
+
+    font-size: 12px;
+}
+
+.seller-summary-card strong {
+    color: #172033;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   DASHBOARD SECTIONS
+   ========================================================= */
+
+.seller-dashboard-section {
+    margin-bottom: 40px;
+
+    border: 1px solid #e7e8eb;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.seller-section-heading {
+    min-height: 85px;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.seller-section-heading p {
+    margin-bottom: 5px;
+
+    color: #808793;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.seller-section-heading h2 {
+    color: #172033;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   LOADING AND EMPTY STATES
+   ========================================================= */
+
+.seller-loading-message,
+.seller-empty-message {
+    padding: 65px 25px;
+
+    text-align: center;
+
+    color: #747c88;
+}
+
+.seller-empty-message svg {
+    margin-bottom: 13px;
+
+    color: #858d99;
+}
+
+.seller-empty-message h3 {
+    margin-bottom: 6px;
+
+    color: #343b48;
+
+    font-size: 17px;
+}
+
+.seller-empty-message p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PRODUCTS TABLE
+   ========================================================= */
+
+.seller-products-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.seller-products-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+.seller-products-table th {
+    padding: 15px 20px;
+
+    background: #fafafa;
+
+    color: #777f8c;
+
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.seller-products-table td {
+    padding: 16px 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    color: #5d6572;
+
+    font-size: 13px;
+}
+
+.seller-products-table tbody tr:hover {
+    background: #fcfcfc;
+}
+
+
+/* Product Information */
+
+.seller-product-information {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.seller-product-image {
+    width: 48px;
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 1px solid #eeeeee;
+}
+
+.seller-product-information div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.seller-product-information strong {
+    max-width: 230px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #252d3b;
+
+    font-size: 13px;
+}
+
+.seller-product-information span {
+    color: #9299a4;
+
+    font-size: 10px;
+}
+
+
+/* Product Status */
+
+.product-status {
+    display: inline-flex;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.product-status.active {
+    background: #edf6ef;
+
+    color: #367a43;
+}
+
+.product-status.inactive {
+    background: #f5eeee;
+
+    color: #8a5050;
+}
+
+
+/* Product Actions */
+
+.seller-product-actions {
+    display: flex;
+
+    gap: 7px;
+}
+
+.seller-product-actions button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e0e2e6;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #626a77;
+
+    cursor: pointer;
+}
+
+.seller-product-actions button:hover {
+    border-color: #111827;
+
+    color: #111827;
+}
+
+.seller-product-actions .delete-product-button:hover {
+    border-color: #b44747;
+
+    color: #b44747;
+}
+
+
+/* =========================================================
+   SELLER ORDERS
+   ========================================================= */
+
+.seller-orders-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.seller-order-card {
+    padding: 22px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+    1fr 1fr 2fr;
+
+    gap: 30px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.seller-order-card:last-child {
+    border-bottom: none;
+}
+
+.seller-order-card > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.seller-order-card strong {
+    color: #252d3b;
+
+    font-size: 14px;
+}
+
+.seller-order-card span {
+    color: #8a929e;
+
+    font-size: 11px;
+}
+
+.seller-order-card p {
+    color: #636b78;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .seller-navigation-container {
+        padding: 0 25px;
+    }
+
+    .seller-dashboard-content {
+        padding: 40px 25px 60px;
+    }
+
+    .seller-summary-information {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-order-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .seller-order-card > div:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .seller-navigation-container {
+        min-height: 65px;
+
+        padding: 12px 18px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .seller-shop-information {
+        order: 3;
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding-bottom: 5px;
+    }
+
+    .seller-navigation-actions {
+        margin-left: auto;
+    }
+
+    .seller-dashboard-content {
+        padding: 30px 18px 50px;
+    }
+
+    .seller-dashboard-introduction {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seller-dashboard-introduction h1 {
+        font-size: 29px;
+    }
+
+    .add-product-button {
+        width: 100%;
+    }
+
+    .seller-section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seller-section-heading .add-product-button {
+        width: auto;
+    }
+
+    .seller-order-card {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .seller-order-card > div:last-child {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SELLER SHOP DETAILS, LIMITS & TERMS
+   ========================================================= */
+
+.seller-limits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 15px;
+}
+
+.seller-limit-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+}
+
+.seller-limit-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.seller-limit-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+
+.seller-limit-card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.seller-limit-card-subtitle {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+.seller-limit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.seller-limit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.seller-limit-item span {
+    color: #64748b;
+}
+
+.seller-limit-item strong {
+    color: #0f172a;
+}
+
+.quota-progress-container {
+    margin-top: 8px;
+}
+
+.quota-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.quota-progress-track {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quota-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.merchant-verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}

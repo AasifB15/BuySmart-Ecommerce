@@ -1,0 +1,966 @@
+/* =========================================================
+   BUYSMART UNIVERSAL NAVBAR - AMAZON / FLIPKART DESIGN
+   ========================================================= */
+
+.buysmart-navbar-root {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    font-family: inherit;
+    background: var(--bg-primary, #ffffff);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* TOP ANNOUNCEMENT STRIP */
+.buysmart-top-announcement {
+    background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    padding: 0.35rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.buysmart-announcement-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.buysmart-announcement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+}
+
+.buysmart-announcement-item svg {
+    color: #fbbf24;
+}
+
+.buysmart-announcement-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cbd5e1;
+}
+
+.buysmart-announcement-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.buysmart-announcement-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* MAIN NAVBAR */
+.buysmart-main-navbar {
+    background: var(--bg-card, #ffffff);
+    border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    padding: 0.7rem 1rem;
+    backdrop-filter: blur(12px);
+}
+
+.buysmart-nav-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+/* LEFT: BACK BUTTON + LOGO */
+.buysmart-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+}
+
+.buysmart-nav-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.12));
+    background: var(--bg-tertiary, #f8fafc);
+    color: var(--text-primary, #0f172a);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buysmart-nav-back-button:hover {
+    background: #e11d48;
+    color: #ffffff;
+    border-color: #e11d48;
+    transform: translateX(-2px);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+}
+
+.buysmart-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-logo-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    transition: transform 0.25s ease;
+}
+
+.buysmart-logo:hover .buysmart-logo-badge {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.buysmart-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.buysmart-brand-name {
+    font-size: 1.3rem;
+    font-weight: 850;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    display: flex;
+    align-items: baseline;
+}
+
+.buysmart-brand-buy {
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-brand-smart {
+    color: #e11d48;
+    margin-left: 1px;
+}
+
+.buysmart-brand-tagline {
+    font-size: 0.68rem;
+    color: var(--text-secondary, #64748b);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* CENTER: SEARCH BAR (BUYSMART PILL STYLE) */
+.buysmart-search-bar {
+    flex: 1;
+    max-width: 620px;
+    display: flex;
+    align-items: stretch;
+    background: var(--bg-tertiary, #f1f5f9);
+    border: 1.5px solid var(--border-color, #e2e8f0);
+    border-radius: 9999px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.buysmart-search-bar:focus-within {
+    border-color: #e11d48;
+    background: var(--bg-card, #ffffff);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.buysmart-search-category-select {
+    position: relative;
+    background: var(--bg-tertiary, #e2e8f0);
+    border-right: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.buysmart-search-category-select select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary, #0f172a);
+    padding: 0.6rem 1.4rem 0.6rem 0.4rem;
+    cursor: pointer;
+}
+
+.buysmart-select-arrow {
+    position: absolute;
+    right: 0.5rem;
+    pointer-events: none;
+    color: var(--text-secondary, #64748b);
+}
+
+.buysmart-search-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.buysmart-search-input-wrapper input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.92rem;
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-search-input-wrapper input::placeholder {
+    color: var(--text-muted, #94a3b8);
+}
+
+.buysmart-search-clear-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary, #64748b);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 50%;
+}
+
+.buysmart-search-clear-btn:hover {
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-search-submit-btn {
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff;
+    border: none;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: 0 9999px 9999px 0;
+    transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.buysmart-search-submit-btn:hover {
+    filter: brightness(1.1);
+}
+
+.buysmart-search-submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* RIGHT: ACTIONS */
+.buysmart-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+/* ICON-ONLY THEME TOGGLE BUTTON */
+.buysmart-theme-dropdown-wrapper {
+    position: relative;
+}
+
+.buysmart-theme-icon-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.12));
+    background: var(--bg-tertiary, #f8fafc);
+    color: var(--text-primary, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.buysmart-theme-icon-button:hover {
+    background: var(--bg-hover, #e2e8f0);
+    border-color: #e11d48;
+    color: #e11d48;
+    transform: rotate(15deg);
+}
+
+/* FLOATING THEME DROPDOWN */
+.buysmart-theme-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 190px;
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+    padding: 0.4rem;
+    z-index: 1050;
+    animation: buysmartDropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(14px);
+}
+
+.buysmart-dropdown-heading {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary, #64748b);
+    padding: 0.45rem 0.75rem 0.25rem;
+}
+
+.buysmart-dropdown-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary, #0f172a);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.buysmart-dropdown-item:hover {
+    background: var(--bg-hover, #f1f5f9);
+    color: #e11d48;
+}
+
+.buysmart-dropdown-item.active {
+    background: rgba(225, 29, 72, 0.08);
+    color: #e11d48;
+    font-weight: 600;
+}
+
+.buysmart-dropdown-check {
+    margin-left: auto;
+    font-weight: 700;
+    color: #e11d48;
+}
+
+.buysmart-logout-item {
+    color: #ef4444;
+    border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
+    margin-top: 0.25rem;
+    padding-top: 0.6rem;
+}
+
+.buysmart-logout-item:hover {
+    background: rgba(239, 68, 68, 0.08);
+    color: #dc2626;
+}
+
+/* NAV ACTION LINKS */
+.buysmart-nav-action-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.4rem 0.65rem;
+    border-radius: 8px;
+    color: var(--text-secondary, #475569);
+    text-decoration: none;
+    font-size: 0.74rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.buysmart-nav-action-link:hover {
+    color: #e11d48;
+    background: var(--bg-tertiary, #f8fafc);
+}
+
+.buysmart-nav-action-link.active {
+    color: #e11d48;
+}
+
+/* CART ACTION */
+.buysmart-cart-link {
+    position: relative;
+}
+
+.buysmart-cart-icon-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.buysmart-cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    box-shadow: 0 2px 5px rgba(225, 29, 72, 0.4);
+    animation: buysmartPulse 2s infinite;
+}
+
+/* ACCOUNT / SIGN IN */
+.buysmart-user-dropdown-wrapper {
+    position: relative;
+}
+
+.buysmart-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+    background: var(--bg-tertiary, #f8fafc);
+    color: var(--text-primary, #0f172a);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buysmart-user-btn:hover {
+    border-color: #e11d48;
+    background: var(--bg-card, #ffffff);
+}
+
+.buysmart-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buysmart-user-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.buysmart-user-text small {
+    font-size: 0.68rem;
+    color: var(--text-secondary, #64748b);
+}
+
+.buysmart-user-text strong {
+    font-size: 0.82rem;
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 220px;
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+    padding: 0.5rem;
+    z-index: 1050;
+    animation: buysmartDropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buysmart-user-dropdown-header {
+    padding: 0.6rem 0.75rem 0.75rem;
+    border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    margin-bottom: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.buysmart-user-dropdown-header strong {
+    font-size: 0.95rem;
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-user-dropdown-header small {
+    font-size: 0.78rem;
+    color: var(--text-secondary, #64748b);
+    word-break: break-all;
+}
+
+.buysmart-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    margin-top: 0.25rem;
+}
+
+.buysmart-guest-auth-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.buysmart-signin-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+    transition: all 0.2s ease;
+}
+
+.buysmart-signin-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.buysmart-register-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.48rem 0.9rem;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-primary, #0f172a);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.15));
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.buysmart-register-btn:hover {
+    border-color: #4f46e5;
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.buysmart-mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary, #0f172a);
+    cursor: pointer;
+    padding: 0.35rem;
+}
+
+/* SECONDARY CATEGORIES BAR (AMAZON / FLIPKART) */
+.buysmart-secondary-navbar {
+    background: var(--bg-tertiary, #f8fafc);
+    border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.buysmart-secondary-navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.buysmart-secondary-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+}
+
+.buysmart-subnav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-secondary, #475569);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.buysmart-subnav-link:hover {
+    background: var(--bg-card, #ffffff);
+    color: #4f46e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.buysmart-subnav-link.active {
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+}
+
+.buysmart-deals-link {
+    color: #e11d48;
+    background: rgba(225, 29, 72, 0.08);
+}
+
+.buysmart-deals-link:hover {
+    background: rgba(225, 29, 72, 0.14);
+    color: #be123c;
+}
+
+.buysmart-deals-link svg {
+    color: #e11d48;
+}
+
+.buysmart-cat-icon {
+    display: flex;
+    align-items: center;
+    color: inherit;
+}
+
+/* MOBILE DRAWER */
+.buysmart-mobile-drawer {
+    display: none;
+    padding: 1rem;
+    background: var(--bg-card, #ffffff);
+    border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    animation: buysmartDrawerSlide 0.2s ease;
+}
+
+.buysmart-mobile-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-input, #f1f5f9);
+    padding: 0.6rem 0.85rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.buysmart-mobile-search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--text-primary, #0f172a);
+}
+
+.buysmart-mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.buysmart-mobile-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary, #0f172a);
+    font-weight: 500;
+}
+
+.buysmart-mobile-links a:hover {
+    background: var(--bg-hover, #f1f5f9);
+}
+
+.buysmart-mobile-categories {
+    border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.buysmart-mobile-categories strong {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-secondary, #64748b);
+    margin-bottom: 0.35rem;
+}
+
+.buysmart-mobile-categories a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary, #0f172a);
+}
+
+/* ANIMATIONS */
+@keyframes buysmartDropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes buysmartDrawerSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buysmartPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .buysmart-search-btn-text,
+    .buysmart-brand-tagline {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .buysmart-top-announcement {
+        display: none;
+    }
+
+    .buysmart-search-bar {
+        display: none;
+    }
+
+    .buysmart-nav-action-link:not(.buysmart-cart-link) {
+        display: none;
+    }
+
+    .buysmart-user-text {
+        display: none;
+    }
+
+    .buysmart-mobile-menu-toggle {
+        display: block;
+    }
+
+    .buysmart-mobile-drawer {
+        display: block;
+    }
+
+    .buysmart-back-label {
+        display: none;
+    }
+}
+
+/* =========================================================
+   DARK MODE ENGINE FOR BUYSMART NAVBAR
+   ========================================================= */
+
+[data-theme="dark"] .buysmart-header {
+    background: #090d16;
+}
+
+[data-theme="dark"] .buysmart-main-navbar {
+    background: rgba(15, 23, 42, 0.96);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .buysmart-brand-buy {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-brand-smart {
+    color: #f43f5e;
+}
+
+[data-theme="dark"] .buysmart-nav-back-button,
+[data-theme="dark"] .buysmart-theme-icon-button,
+[data-theme="dark"] .buysmart-user-btn {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-nav-back-button:hover,
+[data-theme="dark"] .buysmart-theme-icon-button:hover,
+[data-theme="dark"] .buysmart-user-btn:hover {
+    background: #273549;
+    border-color: #f43f5e;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .buysmart-search-bar {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .buysmart-search-bar:focus-within {
+    border-color: #f43f5e;
+    background: #111827;
+    box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.2);
+}
+
+[data-theme="dark"] .buysmart-search-category-select {
+    background: #1e293b;
+    border-right-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .buysmart-search-category-select select {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-search-input-wrapper input {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-secondary-navbar {
+    background: #0b0f19;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .buysmart-subnav-link {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .buysmart-subnav-link:hover {
+    background: #1e293b;
+    color: #f43f5e;
+}
+
+[data-theme="dark"] .buysmart-subnav-link.active {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+}
+
+[data-theme="dark"] .buysmart-nav-action-link:hover {
+    color: #f43f5e;
+    background: #1e293b;
+}
+
+[data-theme="dark"] .buysmart-nav-action-link.active {
+    color: #f43f5e;
+}
+
+[data-theme="dark"] .buysmart-user-dropdown,
+[data-theme="dark"] .buysmart-theme-dropdown {
+    background: #111827;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .buysmart-user-dropdown-header {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .buysmart-user-dropdown-header strong {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-user-dropdown-header small {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .buysmart-role-badge {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+}
+
+[data-theme="dark"] .buysmart-dropdown-item {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .buysmart-dropdown-item:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .buysmart-theme-option {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .buysmart-theme-option:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .buysmart-theme-option.active {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+}
+
+[data-theme="dark"] .buysmart-mobile-drawer {
+    background: #111827;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .buysmart-mobile-search {
+    background: #1e293b;
+}
+
+[data-theme="dark"] .buysmart-mobile-search input {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .buysmart-mobile-links a,
+[data-theme="dark"] .buysmart-mobile-categories a {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .buysmart-mobile-links a:hover,
+[data-theme="dark"] .buysmart-mobile-categories a:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .buysmart-mobile-categories strong {
+    color: #f8fafc;
+}
+

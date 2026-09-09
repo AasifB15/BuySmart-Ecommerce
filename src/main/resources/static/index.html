@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ShopSphere ecommerce storefront">
+  <title>ShopSphere | Everyday essentials</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="ShopSphere home"><span>◈</span> ShopSphere</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#shop">Shop</a><a href="#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-button" id="accountButton">Sign in</button>
+      <button class="cart-button" id="cartButton" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy"><p class="eyebrow">CURATED FOR EVERYDAY</p><h1>Good things, made easy.</h1><p>Discover practical products for your work, home and daily life.</p><a class="primary-button" href="#shop">Shop the collection</a></div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div><div class="hero-card">EVERYDAY<br><em>goods</em></div></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Find your next favourite</h2></div><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products"></label></div>
+      <div class="category-row" id="categoryFilters"><button class="filter active" data-category="">All products</button></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"><p class="loading">Loading products…</p></div>
+    </section>
+
+    <section class="feature-strip" id="about"><div><strong>Secure checkout</strong><span>JWT-protected shopping</span></div><div><strong>Simple returns</strong><span>Manage orders from your account</span></div><div><strong>Built locally</strong><span>Spring Boot storefront</span></div></section>
+  </main>
+
+  <footer><span>© <span id="year"></span> ShopSphere</span><span>Made for modern shopping.</span></footer>
+
+  <dialog id="authDialog" class="dialog"><div class="dialog-content"><button class="close" data-close="authDialog" aria-label="Close">×</button><div id="authView"></div></div></dialog>
+  <dialog id="cartDialog" class="dialog side-dialog"><div class="dialog-content"><button class="close" data-close="cartDialog" aria-label="Close">×</button><div id="cartView"></div></div></dialog>
+  <dialog id="checkoutDialog" class="dialog"><div class="dialog-content"><button class="close" data-close="checkoutDialog" aria-label="Close">×</button><div id="checkoutView"></div></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

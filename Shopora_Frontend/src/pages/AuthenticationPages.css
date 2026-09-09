@@ -1,0 +1,543 @@
+/* =========================================================
+   SHOPORA AUTHENTICATION PAGES
+   ========================================================= */
+
+.authentication-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background: #f5f6f8;
+}
+
+.authentication-container {
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   INFORMATION SIDE
+   ========================================================= */
+
+.authentication-information {
+    padding: 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #111827;
+
+    color: #ffffff;
+}
+
+.authentication-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.authentication-brand-symbol {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 21px;
+}
+
+.authentication-information-content {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    max-width: 380px;
+}
+
+.authentication-information-content svg {
+    margin-bottom: 25px;
+}
+
+.authentication-information-content h1 {
+    margin-bottom: 18px;
+
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.authentication-information-content p {
+    color: #c2c8d1;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   FORM SIDE
+   ========================================================= */
+
+.authentication-form-container {
+    padding: 55px 65px;
+
+    overflow-y: auto;
+}
+
+.authentication-form-header {
+    margin-bottom: 25px;
+}
+
+.authentication-form-header h2 {
+    margin-bottom: 8px;
+
+    color: #111827;
+
+    font-size: 29px;
+}
+
+.authentication-form-header p {
+    color: #747c88;
+
+    font-size: 14px;
+}
+
+.authentication-error {
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #f0c4c4;
+
+    border-radius: 8px;
+
+    background: #fff3f3;
+
+    color: #a52929;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.authentication-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.authentication-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.authentication-field label {
+    color: #303746;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.authentication-input {
+    min-height: 47px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 13px;
+
+    border: 1px solid #dfe2e7;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.authentication-input:focus-within {
+    border-color: #111827;
+
+    box-shadow:
+            0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+.authentication-input svg {
+    flex-shrink: 0;
+
+    color: #858d99;
+}
+
+.authentication-input input {
+    width: 100%;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #172033;
+
+    font-size: 14px;
+}
+
+.authentication-input input::placeholder {
+    color: #a0a7b1;
+}
+
+/* Password Visibility */
+
+.password-visibility-button {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #737b87;
+}
+
+.password-visibility-button:hover {
+    color: #111827;
+}
+
+/* Select */
+
+.authentication-select {
+    width: 100%;
+
+    height: 47px;
+
+    padding: 0 13px;
+
+    border: 1px solid #dfe2e7;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.authentication-select:focus {
+    border-color: #111827;
+
+    box-shadow:
+            0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+/* Submit */
+
+.authentication-submit-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.authentication-submit-button:hover:not(:disabled) {
+    background: #252d3b;
+
+    transform: translateY(-1px);
+}
+
+.authentication-submit-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   FORM FOOTER
+   ========================================================= */
+
+.authentication-form-footer {
+    margin-top: 28px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #eeeeee;
+
+    text-align: center;
+}
+
+.authentication-form-footer p {
+    display: inline;
+
+    color: #747c88;
+
+    font-size: 13px;
+}
+
+.authentication-form-footer a {
+    margin-left: 5px;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.authentication-form-footer a:hover {
+    text-decoration: underline;
+}
+
+.return-home-link {
+    display: block;
+
+    margin-top: 22px;
+
+    color: #747c88;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+.return-home-link:hover {
+    color: #111827;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .authentication-container {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+    .authentication-information {
+        min-height: 260px;
+
+        padding: 30px;
+    }
+
+    .authentication-information-content {
+        margin-top: 45px;
+        margin-bottom: 0;
+    }
+
+    .authentication-information-content h1 {
+        font-size: 32px;
+    }
+
+    .authentication-information-content p {
+        font-size: 14px;
+    }
+
+    .authentication-form-container {
+        padding: 40px 30px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .authentication-page {
+        padding: 0;
+    }
+
+    .authentication-container {
+        min-height: 100vh;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .authentication-information {
+        min-height: 220px;
+
+        padding: 25px;
+    }
+
+    .authentication-form-container {
+        padding: 35px 25px;
+    }
+
+    .authentication-form-header h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* =========================================================
+   LOGIN MODE TABS & OTP AUTHENTICATION
+   ========================================================= */
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 5px;
+    background: #f1f5f9;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.auth-tab-btn {
+    padding: 9px 14px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.auth-tab-btn:hover {
+    color: #1e293b;
+}
+
+.auth-tab-btn.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.otp-instruction-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.otp-code-input {
+    font-family: monospace;
+    font-size: 22px !important;
+    letter-spacing: 0.35em;
+    text-align: center;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.otp-resend-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.otp-resend-btn {
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 13px;
+    transition: color 0.15s ease;
+}
+
+.otp-resend-btn:hover:not(:disabled) {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.otp-resend-btn:disabled {
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.otp-change-email-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 12.5px;
+    text-decoration: underline;
+    margin-top: 6px;
+    display: inline-block;
+}

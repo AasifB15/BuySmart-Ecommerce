@@ -1,0 +1,532 @@
+{
+  "info": {
+    "name": "E-Commerce Management System",
+    "description": "Java Full Stack Spring Boot E-Commerce API - Admin, Seller, Customer modules",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "adminToken", "value": "" },
+    { "key": "sellerToken", "value": "" },
+    { "key": "customerToken", "value": "" },
+    { "key": "categoryId", "value": "1" },
+    { "key": "productId", "value": "1" },
+    { "key": "cartItemId", "value": "1" },
+    { "key": "orderId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login as Admin",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "pm.collectionVariables.set('adminToken', data.data.token);"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@ecommerce.com\",\n  \"password\": \"Admin@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register Seller",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "pm.collectionVariables.set('sellerToken', data.data.token);"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Shop Owner\",\n  \"email\": \"seller@example.com\",\n  \"password\": \"Pass@123\",\n  \"phoneNumber\": \"9876543210\",\n  \"role\": \"ROLE_SELLER\",\n  \"shopName\": \"Tech Bazaar\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register Customer",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "pm.collectionVariables.set('customerToken', data.data.token);"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Aasif Barudwale\",\n  \"email\": \"customer@example.com\",\n  \"password\": \"Pass@123\",\n  \"phoneNumber\": \"9876543210\",\n  \"role\": \"ROLE_CUSTOMER\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login as Seller",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "pm.collectionVariables.set('sellerToken', data.data.token);"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"seller@example.com\",\n  \"password\": \"Pass@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login as Customer",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "pm.collectionVariables.set('customerToken', data.data.token);"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"password\": \"Pass@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Send OTP (Email)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/otp/send",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"purpose\": \"LOGIN\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Verify OTP",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "if (data.data && data.data.token) { pm.collectionVariables.set('customerToken', data.data.token); }"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/otp/verify",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"otp\": \"123456\",\n  \"purpose\": \"LOGIN\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Reset Password via OTP",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/auth/password/reset",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@example.com\",\n  \"otp\": \"123456\",\n  \"newPassword\": \"NewPass@123\",\n  \"confirmPassword\": \"NewPass@123\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/categories" }
+        },
+        {
+          "name": "Create Category (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/categories",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Toys\",\n  \"description\": \"Toys and games\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Category (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/categories/{{categoryId}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Electronics\",\n  \"description\": \"Updated description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Category (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/categories/{{categoryId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products" }
+        },
+        {
+          "name": "Get Product By Id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products/{{productId}}" }
+        },
+        {
+          "name": "Search Products",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products/search?keyword=mouse" }
+        },
+        {
+          "name": "Create Product (Seller)",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "if (data.data && data.data.id) { pm.collectionVariables.set('productId', data.data.id); }"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{sellerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/products",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wireless Mouse\",\n  \"description\": \"Ergonomic 2.4GHz wireless mouse\",\n  \"price\": 799.00,\n  \"stockQuantity\": 50,\n  \"categoryId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Product (Seller)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{sellerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/products/{{productId}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wireless Mouse Pro\",\n  \"description\": \"Updated description\",\n  \"price\": 899.00,\n  \"stockQuantity\": 40,\n  \"categoryId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Product (Seller)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{sellerToken}}" }],
+            "url": "{{baseUrl}}/api/products/{{productId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart (Customer)",
+      "item": [
+        {
+          "name": "Get Cart",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/cart"
+          }
+        },
+        {
+          "name": "Add Item to Cart",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "if (data.data && data.data.items && data.data.items.length) { pm.collectionVariables.set('cartItemId', data.data.items[0].id); }"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/cart/items",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": {{productId}},\n  \"quantity\": 2\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Cart Item Quantity",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/cart/items/{{cartItemId}}?quantity=3"
+          }
+        },
+        {
+          "name": "Remove Cart Item",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/cart/items/{{cartItemId}}"
+          }
+        },
+        {
+          "name": "Clear Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/cart"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Place Order (Customer)",
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const data = pm.response.json();",
+              "if (data.data && data.data.id) { pm.collectionVariables.set('orderId', data.data.id); }"
+            ]}
+          }],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/orders",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shippingAddress\": \"221B Baker Street, Baramati, Maharashtra, 413102\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get My Orders (Customer)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/orders/my-orders"
+          }
+        },
+        {
+          "name": "Get Order By Id",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/orders/{{orderId}}"
+          }
+        },
+        {
+          "name": "Cancel Order (Customer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/orders/{{orderId}}/cancel",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Changed mind before shipping\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seller Dashboard",
+      "item": [
+        {
+          "name": "My Products",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{sellerToken}}" }],
+            "url": "{{baseUrl}}/api/seller/products"
+          }
+        },
+        {
+          "name": "Orders Containing My Products",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{sellerToken}}" }],
+            "url": "{{baseUrl}}/api/seller/orders"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Dashboard",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/admin/users"
+          }
+        },
+        {
+          "name": "Disable User",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/admin/users/2/disable"
+          }
+        },
+        {
+          "name": "Enable User",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/admin/users/2/enable"
+          }
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/admin/orders"
+          }
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/admin/orders/{{orderId}}/status",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"CONFIRMED\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Process Order Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/payments/process/{{orderId}}",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": \"CARD\",\n  \"amount\": 1598.00,\n  \"cardHolderName\": \"Aasif Barudwale\",\n  \"cardNumberLast4\": \"4242\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Payment Details",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/payments/{{orderId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer Account",
+      "item": [
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{customerToken}}" }],
+            "url": "{{baseUrl}}/api/account/profile"
+          }
+        },
+        {
+          "name": "Update My Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/account/profile",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Aasif Barudwale\",\n  \"phoneNumber\": \"9876543210\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{customerToken}}" }
+            ],
+            "url": "{{baseUrl}}/api/account/password",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"Pass@123\",\n  \"newPassword\": \"NewPass@123\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
